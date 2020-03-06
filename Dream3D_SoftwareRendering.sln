@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_02_SoftwareRenderer_3DStar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_03_SoftwareRenderer_RenderContext", "_03_SoftwareRenderer_RenderContext\_03_SoftwareRenderer_RenderContext.vcxproj", "{8CB8EB1C-4CE7-48F8-9995-470027A6802E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_04_SoftwareRenderer_SolidShapes", "_04_SoftwareRenderer_SolidShapes\_04_SoftwareRenderer_SolidShapes.vcxproj", "{8CB8EB1D-4CE8-48F9-9996-470027A6802F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -59,6 +61,14 @@ Global
 		{8CB8EB1C-4CE7-48F8-9995-470027A6802E}.Release|x64.Build.0 = Release|x64
 		{8CB8EB1C-4CE7-48F8-9995-470027A6802E}.Release|x86.ActiveCfg = Release|Win32
 		{8CB8EB1C-4CE7-48F8-9995-470027A6802E}.Release|x86.Build.0 = Release|Win32
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Debug|x64.ActiveCfg = Debug|x64
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Debug|x64.Build.0 = Debug|x64
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Debug|x86.Build.0 = Debug|Win32
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Release|x64.ActiveCfg = Release|x64
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Release|x64.Build.0 = Release|x64
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Release|x86.ActiveCfg = Release|Win32
+		{8CB8EB1D-4CE8-48F9-9996-470027A6802F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
