@@ -39,6 +39,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_15_SoftwareRenderer_Z-Buff
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_16_SoftwareRenderer_Clipping", "_16_SoftwareRenderer_Clipping\_16_SoftwareRenderer_Clipping.vcxproj", "{8CB8EB29-4CF4-4904-1113-470027A68041}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_17_SoftwareRenderer_ExampleScene", "_17_SoftwareRenderer_ExampleScene\_17_SoftwareRenderer_ExampleScene.vcxproj", "{8CB8EB30-4CF5-4905-1114-470027A68042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -189,6 +191,14 @@ Global
 		{8CB8EB29-4CF4-4904-1113-470027A68041}.Release|x64.Build.0 = Release|x64
 		{8CB8EB29-4CF4-4904-1113-470027A68041}.Release|x86.ActiveCfg = Release|Win32
 		{8CB8EB29-4CF4-4904-1113-470027A68041}.Release|x86.Build.0 = Release|Win32
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Debug|x64.ActiveCfg = Debug|x64
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Debug|x64.Build.0 = Debug|x64
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Debug|x86.Build.0 = Debug|Win32
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Release|x64.ActiveCfg = Release|x64
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Release|x64.Build.0 = Release|x64
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Release|x86.ActiveCfg = Release|Win32
+		{8CB8EB30-4CF5-4905-1114-470027A68042}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
