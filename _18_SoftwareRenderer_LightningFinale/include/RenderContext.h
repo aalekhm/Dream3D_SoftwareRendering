@@ -1,0 +1,48 @@
+#pragma once
+#include <windows.h>
+#include <cstdint>
+#include "Pixel.h"
+#include "Vertex.h"
+#include <chrono>
+#include "Edge.h"
+#include "Mesh.h"
+
+class Sprite;
+class RenderContext
+{
+	public:
+															RenderContext(uint32_t iWidth, uint32_t iHeight, uint32_t iPixelWidth, uint32_t iPixelHeight);
+															~RenderContext();
+
+		uint32_t											GetWidth();
+		uint32_t											GetHeight();
+
+		void												Render();
+
+		void												DrawTriangle(Vertex v1, Vertex v2, Vertex v3, Sprite* pBitmapTexture);
+		
+		void												DrawPixel(int32_t iX, int32_t iY, float fLightAmt, Pixel pPixel);
+		void												CopyPixel(int destX, int destY, int srcX, int srcY, float fLightAmt, Sprite* pTexture);
+		void												Clear(Pixel p, float fDepth);
+	protected:
+		void												FillTriangle(Vertex v1, Vertex v2, Vertex v3, Sprite* pTexture);
+		void												RenderInternal(uint32_t iDeltaTimeMs);
+
+		bool												ClipPolygonAxis(std::vector<Vertex>& vVertices, std::vector<Vertex>& vAuxillaryList, AXIS_COMPONENT eComponentIndex);
+		void												ClipPolygonComponent(std::vector<Vertex>& vVertices, AXIS_COMPONENT eComponentIndex, float fComponentFactor, std::vector<Vertex>& vResult);
+
+		void												ScanTriangle(Vertex vMinYVert, Vertex vMidYVert, Vertex vMaxYVert, bool bHandedness, Sprite* pTexture);
+		void												ScanEdges(Gradients* pGradients, Edge* eA, Edge* eB, bool handedness, Sprite* pTexture);
+		void												DrawScanLine(Gradients* pGradients, Edge* eLeft, Edge* eRight, int j, Sprite* pTexture);
+	private:
+		Sprite*												m_pFrameBuffer = nullptr;
+		float*												m_pDepthBuffer = nullptr;
+
+		uint32_t											m_iWidth;
+		uint32_t											m_iHeight;
+		uint32_t											m_iPixelWidth;
+		uint32_t											m_iPixelHeight;
+
+		uint32_t											m_iDeltaTimeMs;
+		std::chrono::high_resolution_clock::time_point		m_tpLastUpdate;
+};
