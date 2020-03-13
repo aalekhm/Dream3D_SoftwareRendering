@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_18_SoftwareRenderer_Lightn
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_19_SoftwareRenderer_Basic2DShapes", "_19_SoftwareRenderer_Basic2DShapes\_19_SoftwareRenderer_Basic2DShapes.vcxproj", "{8CB8EB32-4CF7-4907-1116-470027A68044}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_20_SoftwareRenderer_BezierCurve", "_20_SoftwareRenderer_BezierCurve\_20_SoftwareRenderer_BezierCurve.vcxproj", "{8CB8EB33-4CF8-4908-1117-470027A68045}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -219,6 +221,14 @@ Global
 		{8CB8EB32-4CF7-4907-1116-470027A68044}.Release|x64.Build.0 = Release|x64
 		{8CB8EB32-4CF7-4907-1116-470027A68044}.Release|x86.ActiveCfg = Release|Win32
 		{8CB8EB32-4CF7-4907-1116-470027A68044}.Release|x86.Build.0 = Release|Win32
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Debug|x64.ActiveCfg = Debug|x64
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Debug|x64.Build.0 = Debug|x64
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Debug|x86.Build.0 = Debug|Win32
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Release|x64.ActiveCfg = Release|x64
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Release|x64.Build.0 = Release|x64
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Release|x86.ActiveCfg = Release|Win32
+		{8CB8EB33-4CF8-4908-1117-470027A68045}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
