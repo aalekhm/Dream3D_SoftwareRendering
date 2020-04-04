@@ -55,6 +55,13 @@ class EngineManager {
 		unsigned int			getWidth();
 		unsigned int			getHeight();
 		
+		unsigned int			getPixelWidth();
+		unsigned int			getPixelHeight();
+
+		void					setPixelSize(unsigned int iPixelW, unsigned int iPixelH);
+		void					setPixelWidth(unsigned int iPixelW);
+		void					setPixelHeight(unsigned int iPixelH);
+
 		void					frame();
 		void					updateFPS();
 		unsigned int			getFPS();
@@ -69,8 +76,11 @@ class EngineManager {
 		MouseManager*			m_pMouseManager;
 		HWND					m_pHWnd;
 
-		int						m_iViewportW;
-		int						m_iViewportH;
+		unsigned int			m_iViewportW;
+		unsigned int			m_iViewportH;
+
+		unsigned int			m_iPixelW;
+		unsigned int			m_iPixelH;
 
 		State					m_iState;
 		bool					m_bInitialized;

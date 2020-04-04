@@ -51,6 +51,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_21_SoftwareRenderer_Bezier
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_22_SoftwareRenderer_BezierConnectingTheDots", "_22_SoftwareRenderer_BezierConnectingTheDots\_22_SoftwareRenderer_BezierConnectingTheDots.vcxproj", "{8CB8EB35-4CFA-490A-1119-470027A68047}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_23_SoftwareRenderer_BezierConnectingTheDots3D", "_23_SoftwareRenderer_BezierConnectingTheDots3D\_23_SoftwareRenderer_BezierConnectingTheDots3D.vcxproj", "{8CB8EB36-4CFB-490B-111A-470027A68048}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

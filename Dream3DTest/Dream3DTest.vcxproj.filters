@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Engine">
       <UniqueIdentifier>{aca1fe2e-4035-4ddd-8204-2b73a4c35b5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{e6ea0ec5-add2-4076-a1bd-959c1dee6068}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dream3DTest.cpp">
@@ -40,6 +43,12 @@
     </ClInclude>
     <ClInclude Include="include\Engine\EngineManager.h">
       <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Console2D.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Defines.h">
+      <Filter>Header Files\Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

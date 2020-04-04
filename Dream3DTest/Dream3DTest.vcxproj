@@ -125,8 +125,10 @@
     <ClCompile Include="src\Dream3DTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Common\Defines.h" />
     <ClInclude Include="include\Dream3DTest.h" />
     <ClInclude Include="include\Engine\Base.h" />
+    <ClInclude Include="include\Engine\Console2D.h" />
     <ClInclude Include="include\Engine\EngineManager.h" />
     <ClInclude Include="include\Engine\KeyboardManager.h" />
     <ClInclude Include="include\Engine\MouseManager.h" />

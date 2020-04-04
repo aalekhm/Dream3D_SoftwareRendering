@@ -19,6 +19,8 @@ class Dream3DTest : EngineManager
 		virtual void			onMouseMoveEx(int mCode, int x, int y);
 		virtual void			onMouseUpEx(int mCode, int x, int y);
 		virtual void			onMouseWheelEx(WPARAM wParam, LPARAM lParam);
+
+		void					render2DConsole();
 	protected:
 	private:
 };

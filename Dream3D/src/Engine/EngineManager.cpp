@@ -1,12 +1,14 @@
 #include "Engine/EngineManager.h"
+#include "Engine/Console2D.h"
 
 EngineManager*	EngineManager::m_pEngineManager;
 
 EngineManager::EngineManager()
-	:	m_pTimer(NULL),
-		m_pKeyboardManager(NULL),
-		m_pMouseManager(NULL),
-		m_pHWnd(NULL),		
+	:	m_pTimer(nullptr),
+		m_pKeyboardManager(nullptr),
+		m_pMouseManager(nullptr),
+		
+		m_pHWnd(nullptr),
 
 		m_iViewportW(1024),
 		m_iViewportH(768),
@@ -37,6 +39,7 @@ void EngineManager::startup(HWND pHWnd) {
 
 	m_pKeyboardManager = new KeyboardManager();
 	m_pMouseManager = new MouseManager();
+	Console2D::getInstance();
 	m_pTimer = new Timer();
 	initTimer();
 

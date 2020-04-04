@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Common">
       <UniqueIdentifier>{511afe1f-a1d3-4ebd-a9bd-181c17a4b47e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{1e64241e-cf43-45df-8f45-af0216dfaff2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\EngineManager.cpp">
@@ -44,6 +47,12 @@
     </ClCompile>
     <ClCompile Include="src\Engine\TGA.cpp">
       <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Console2D.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Common\Matrices.cpp">
+      <Filter>Source Files\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +81,18 @@
       <Filter>Header Files\Common</Filter>
     </ClInclude>
     <ClInclude Include="include\Common\RandomAccessFile.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Console2D.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Defines.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Matrices.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Common\Vectors.h">
       <Filter>Header Files\Common</Filter>
     </ClInclude>
   </ItemGroup>
