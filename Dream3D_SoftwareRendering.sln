@@ -55,6 +55,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_23_SoftwareRenderer_Bezier
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_24_SoftwareRenderer_BezierRefactor", "_24_SoftwareRenderer_BezierRefactor\_24_SoftwareRenderer_BezierRefactor.vcxproj", "{8CB8EB37-4CFC-490C-111B-470027A68049}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_25_SoftwareRenderer_SteeringBehaviour_Seek", "_25_SoftwareRenderer_SteeringBehaviour_Seek\_25_SoftwareRenderer_SteeringBehaviour_Seek.vcxproj", "{8CB8EB38-4CFD-490D-111C-470027A6804A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
