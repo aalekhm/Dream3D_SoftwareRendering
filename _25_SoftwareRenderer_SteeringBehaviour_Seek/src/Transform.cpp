@@ -34,7 +34,7 @@ Transform Transform::rotate(Quaternion rotation)
 Transform Transform::lookAt(Vector4f point, Vector4f up)
 {
 	m_rot = getLookAtRotation(point, up).normalized();
-	return *this;
+	return rotate(m_rot);
 
 	// Orig
 	//return rotate(getLookAtRotation(point, up));

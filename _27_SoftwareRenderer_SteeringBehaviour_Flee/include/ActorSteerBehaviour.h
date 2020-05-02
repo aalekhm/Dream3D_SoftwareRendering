@@ -4,13 +4,13 @@
 
 enum ESteerBehaviour
 {
-	SEEK	= 1,
-	ARRIVE	= (SEEK << 1),
-	FLEE	= (ARRIVE << 1),
-	PURSUIT = (FLEE << 1),
-	EVADE	= (PURSUIT << 1),
-	WANDER	= (EVADE << 1),
-	COUNT	= 7
+	SEEK,
+	ARRIVE,
+	FLEE,
+	PURSUIT,
+	EVADE,
+	WANDER,
+	COUNT
 };
 
 enum ESteerSummingMethod

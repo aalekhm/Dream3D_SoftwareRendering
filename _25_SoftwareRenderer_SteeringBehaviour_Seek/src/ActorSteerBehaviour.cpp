@@ -75,17 +75,17 @@ Vector3 ActorSteerBehaviour::GetVelocity()
 
 void ActorSteerBehaviour::SetBehaviour(ESteerBehaviour eESteerBehaviour)
 {
-	m_eBehaviour = eESteerBehaviour;
+	m_eBehaviour = (1 << eESteerBehaviour);
 }
 
 void ActorSteerBehaviour::AddBehaviour(ESteerBehaviour eESteerBehaviour)
 {
-	m_eBehaviour |= eESteerBehaviour;
+	m_eBehaviour |= (1 << eESteerBehaviour);
 }
 
 bool ActorSteerBehaviour::IsOn(ESteerBehaviour eESteerBehaviour)
 {
-	return (m_eBehaviour & eESteerBehaviour) > 0;
+	return (m_eBehaviour & (1 <<eESteerBehaviour)) > 0;
 }
 
 void ActorSteerBehaviour::SeekTarget(Actor* pTarget)

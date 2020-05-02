@@ -126,7 +126,7 @@ void SteerBehaviourUtils::render3D(int32_t iDeltaTimeMs)
 		ActorSteerBehaviour* pActorSteerBehaviour = (ActorSteerBehaviour*)gSeek3D.m_pSeeker->GetBehaviour(ActorBehaviourType::STEER);
 		Vector3 vVelocity = pActorSteerBehaviour->GetVelocity();
 
-		Vector3 vLookAt = gSeek3D.m_pSeeker->GetPosition() + (vVelocity * 1);
+		Vector3 vLookAt = gSeek3D.m_pSeeker->GetPosition() + (vVelocity * 2);
 		const float EPSILON = 0.00000001f;
 		if (vLookAt.length() > EPSILON)
 		{
