@@ -145,21 +145,7 @@ Vector3 ActorSteerBehaviour::Flee(Vector3 vTargetPos)
 Vector3 ActorSteerBehaviour::Wander(int32_t iDeltaTimeMs)
 {
 	Vector3 vRetVector;
-	/*
-	// this behavior is dependent on the update rate, so this line must
-	// be included when using time independent framerate.
-	double JitterThisTimeSlice = 2.0;//m_dWanderJitter * m_pVehicle->TimeElapsed();
-	
-	// Add a small random vector to the target's position
-	m_vWanderTarget += Vector3(Random::RandClamped() * JitterThisTimeSlice, Random::RandClamped() * JitterThisTimeSlice, 0);
-	
-	// Normalize it so that its back on to a unit circle
-	m_vWanderTarget.normalize();
-	
-	// Increase the length of the vector to the same as the radius of the 'Wander Circle'
-	m_vWanderTarget *= m_fWanderRadius;
-	*/
-	
+
 	float fJitterFactor = 1.0f;
 	m_vWanderTarget += Vector3(Random::RandClamped() * fJitterFactor, Random::RandClamped() * fJitterFactor, 0);	
 																					// Select a Random point on a Unit Circle
@@ -171,47 +157,51 @@ Vector3 ActorSteerBehaviour::Wander(int32_t iDeltaTimeMs)
 	return vRetVector;
 }
 
-Vector3 ActorSteerBehaviour::Pursuit(Actor* pActorEvader)
+Vector3 ActorSteerBehaviour::Pursuit(Actor* pActorTarget)
 {
 	Vector3 vRetVector;
-	Vector3 vToEvader = (pActorEvader->GetPosition() - m_pActor->GetPosition());			// Calculate the vector between Pursuer & Target
+	Vector3 vToTarget = (pActorTarget->GetPosition() - m_pActor->GetPosition());			// Calculate the vector between Pursuer & Target
 	Vector3 vActorHeading = m_pActor->GetForward();
-	Vector3 vEvaderHeading = pActorEvader->GetForward();
-	double fAngleBetweenHeadings = vActorHeading.dot(vEvaderHeading);
+	Vector3 vTargetHeading = pActorTarget->GetForward();
+	double fAngleBetweenHeadings = vActorHeading.dot(vTargetHeading);
 
 	/*
-					  (vEvaderHeading)			(vActorHeading)	
+					  (vTargetHeading)			(vActorHeading)	
 						  ========>			      <========
 							-----					-----
 							| E |					| P |
 							-----					-----
 
 							  *<----------------------*
-									(vToEvader)
+									(vToTarget)
 	*/
-	if (	vToEvader.dot(vActorHeading) > 0							// If the 'Evader' is in front of the 'Pursuer'
+	if (	vToTarget.dot(vActorHeading) > 0							// If the 'Target' is in front of the 'Pursuer'
 			&&															// and
-			fAngleBetweenHeadings < -0.95								// the 'Evader' is facing the 'Pursuer'
+			fAngleBetweenHeadings < -0.95								// the 'Target' is facing the 'Pursuer'
 	) {																	// then
-		vRetVector = Seek(pActorEvader->GetPosition());					// 'Seek' towards 'Evader's' current position.
+		vRetVector = Seek(pActorTarget->GetPosition());					// 'Seek' towards 'Yatget's' current position.
 	}																	//
 	else																// else
-	{																	// Try to predict Evader's position the future & Seek towards it.
-																		// We shall try to calculate the time(T) required for the Evader to
-																		// cover the D(distance between Evader & Pursuer) with its current Speed(S)
+	{																	// Try to predict Target's position the future & Seek towards it.
+																		// We shall try to calculate the time(T) required for the Target to
+																		// cover the D(distance between Target & Pursuer) with its current Speed(S)
 																		// Since,	Speed(S)  = Distance(D) / Time(T)
 																		//			T = D / S
-																		// So, we can calculate Evaders future position @ Time(T) using
+																		// So, we can calculate Target's future position @ Time(T) using
 																		// P(T) = P(now) + V * T
 																		// & 'Seek' the Pursuer towards this position.
-		double fDistanceD = (vToEvader * 0.5f).length();
-		ActorSteerBehaviour* pEvaderBehaviour = (ActorSteerBehaviour*)pActorEvader->GetBehaviour(ActorBehaviourType::STEER);
-		Vector3 vVelocity_Evader = pEvaderBehaviour->GetVelocity();
-		double fSpeed_Evader = vVelocity_Evader.length();
-		double fLookAheadTime = fDistanceD / fSpeed_Evader;
-		Vector3 vPosition_Evader = pActorEvader->GetPosition();
+		double fDistanceD = (vToTarget * 0.5f).length();
+		ActorSteerBehaviour* pTargetBehaviour = (ActorSteerBehaviour*)pActorTarget->GetBehaviour(ActorBehaviourType::STEER);
+		Vector3 vVelocity_Target = pTargetBehaviour->GetVelocity();
+		double fSpeed_Target = vVelocity_Target.length();
+		const float EPSILON = 0.00000001f;
+		if (fSpeed_Target > EPSILON)
+		{
+			double fLookAheadTime = fDistanceD / fSpeed_Target;
+			Vector3 vPosition_Target = pActorTarget->GetPosition();
 
-		vRetVector = Seek(vPosition_Evader + vVelocity_Evader * fLookAheadTime);
+			vRetVector = Seek(vPosition_Target + vVelocity_Target * fLookAheadTime);
+		}
 	}
 
 	return vRetVector;

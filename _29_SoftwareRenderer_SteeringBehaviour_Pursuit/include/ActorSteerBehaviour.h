@@ -51,7 +51,7 @@ class ActorSteerBehaviour : public ActorBehaviour
 		Vector3						Arrive(Vector3 vTargetPos);		// Agent Arrives at the Target position with Zero velocity
 		Vector3						Flee(Vector3 vTargetPos);		// Agent Flees away from the Target position.
 		Vector3						Wander(int32_t iDeltaTimeMs);
-		Vector3						Pursuit(Actor* pActorEvader);	// Agent tries to "Predict" the Evader's Target position & Seeks towards it 
+		Vector3						Pursuit(Actor* pActorTarget);	// Agent tries to "Predict" the Target's position & Seeks towards it 
 																	//		 trying to catch it.
 
 		Vector3						Calculate(int32_t iDeltaTimeMs);

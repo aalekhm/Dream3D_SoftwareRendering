@@ -87,6 +87,14 @@ struct Pursuit2D
 	bool					m_bInitialized;
 };
 
+struct Pursuit3D
+{
+	bool					m_bEnable;
+	Actor3D*				m_pSeeker;
+	Actor3D*				m_pTarget;
+	bool					m_bInitialized;
+};
+
 class SteerBehaviourUtils
 {
 	public:

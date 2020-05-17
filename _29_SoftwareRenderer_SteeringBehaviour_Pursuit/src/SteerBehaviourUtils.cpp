@@ -20,6 +20,7 @@ Flee3D		gFlee3D;
 Wander2D	gWander2D;
 Wander3D	gWander3D;
 Pursuit2D	gPursuit2D;
+Pursuit3D	gPursuit3D;
 
 void SteerBehaviourUtils::init(RenderContext* pGraphics, Camera* pCamera)
 {
@@ -36,6 +37,7 @@ void SteerBehaviourUtils::init(RenderContext* pGraphics, Camera* pCamera)
 		gWander2D.m_bEnable = false;
 		gWander3D.m_bEnable = false;
 		gPursuit2D.m_bEnable = true;
+		gPursuit3D.m_bEnable = false;
 	}
 
 	initContent();
@@ -296,6 +298,36 @@ void SteerBehaviourUtils::init3D()
 			}
 		}
 	}
+	if (gPursuit3D.m_bEnable && !gPursuit3D.m_bInitialized)
+	{
+		gPursuit3D.m_bInitialized = true;
+
+		gPursuit3D.m_pTarget = new Actor3D("../Content/Arrow.obj", "../Content/sp3bot.tga");
+		{
+			gPursuit3D.m_pTarget->SetScale(Vector3(0.1f, 0.1f, 0.2f));
+			gPursuit3D.m_pTarget->SetPosition(Vector3(0, 0, 0));
+			gPursuit3D.m_pTarget->SetCamera(m_pCamera);
+			ActorSteerBehaviour* pActorSteerBehaviour = (ActorSteerBehaviour*)gPursuit3D.m_pTarget->AddBehaviour(ActorBehaviourType::STEER);
+			if (pActorSteerBehaviour != nullptr)
+			{
+				pActorSteerBehaviour->SetBehaviour(ESteerBehaviour::WANDER);
+				pActorSteerBehaviour->SetTarget(ESteerBehaviour::WANDER, nullptr);
+			}
+		}
+
+		gPursuit3D.m_pSeeker = new Actor3D("../Content/Arrow.obj", "../Content/test.tga");
+		{
+			gPursuit3D.m_pSeeker->SetScale(Vector3(0.1f, 0.1f, 0.2f));
+			gPursuit3D.m_pSeeker->SetPosition(Vector3(0, 0, 0));
+			gPursuit3D.m_pSeeker->SetCamera(m_pCamera);
+			ActorSteerBehaviour* pActorSteerBehaviour = (ActorSteerBehaviour*)gPursuit3D.m_pSeeker->AddBehaviour(ActorBehaviourType::STEER);
+			if (pActorSteerBehaviour != nullptr)
+			{
+				pActorSteerBehaviour->SetBehaviour(ESteerBehaviour::PURSUIT);
+				pActorSteerBehaviour->SetTarget(ESteerBehaviour::PURSUIT, gPursuit3D.m_pTarget);
+			}
+		}
+	}
 }
 
 void SteerBehaviourUtils::render2D(int32_t iDeltaTimeMs)
@@ -467,6 +499,40 @@ void SteerBehaviourUtils::render3D(int32_t iDeltaTimeMs)
 		gWander3D.m_pSeeker->Update(m_pGraphics, iDeltaTimeMs);
 		check3DBounds(gWander3D.m_pSeeker);
 	}
+	if (gPursuit3D.m_bEnable)
+	{
+		//gPursuit3D.m_pTarget->SetVisible(false);
+		ActorSteerBehaviour* pActorSteerBehaviour = (ActorSteerBehaviour*)gPursuit3D.m_pTarget->GetBehaviour(ActorBehaviourType::STEER);
+		if (pActorSteerBehaviour != nullptr)
+		{
+			Vector3 vVelocity = pActorSteerBehaviour->GetVelocity();
+			Vector3 vLookAt = gPursuit3D.m_pTarget->GetPosition() + (vVelocity * 1);
+			const float EPSILON = 0.00000001f;
+			if (vLookAt.length() > EPSILON)
+			{
+				gPursuit3D.m_pTarget->LookAt(vLookAt);
+			}
+		}
+
+		check3DBounds(gPursuit3D.m_pTarget);
+		gPursuit3D.m_pTarget->Update(m_pGraphics, iDeltaTimeMs);
+
+		//gPursuit3D.m_pSeeker->SetVisible(false);
+		pActorSteerBehaviour = (ActorSteerBehaviour*)gPursuit3D.m_pSeeker->GetBehaviour(ActorBehaviourType::STEER);
+		if (pActorSteerBehaviour != nullptr)
+		{
+			Vector3 vVelocity = pActorSteerBehaviour->GetVelocity();
+			Vector3 vLookAt = gPursuit3D.m_pSeeker->GetPosition() + (vVelocity * 1);
+			const float EPSILON = 0.00000001f;
+			if (vLookAt.length() > EPSILON)
+			{
+				gPursuit3D.m_pSeeker->LookAt(vLookAt);
+			}
+		}
+
+		check3DBounds(gPursuit3D.m_pSeeker);
+		gPursuit3D.m_pSeeker->Update(m_pGraphics, iDeltaTimeMs);
+	}
 }
 
 void SteerBehaviourUtils::onMouseUpEx(int mCode, int x, int y)
@@ -516,7 +582,8 @@ void SteerBehaviourUtils::keyReleasedEx(unsigned int iVirtualKeycode, unsigned s
 		gFlee3D.m_bEnable = false;
 		gWander2D.m_bEnable = false;
 		gWander3D.m_bEnable = false;
-		gPursuit2D.m_bEnable = true;
+		gPursuit2D.m_bEnable = m_b2DToggle;
+		gPursuit3D.m_bEnable = !m_b2DToggle;
 
 		initContent();
 	}
