@@ -63,6 +63,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_27_SoftwareRenderer_Steeri
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_28_SoftwareRenderer_SteeringBehaviour_Wander", "_28_SoftwareRenderer_SteeringBehaviour_Wander\_28_SoftwareRenderer_SteeringBehaviour_Wander.vcxproj", "{8CB8EB3B-4D00-4910-111F-470027A6804D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_29_SoftwareRenderer_SteeringBehaviour_Pursuit", "_29_SoftwareRenderer_SteeringBehaviour_Pursuit\_29_SoftwareRenderer_SteeringBehaviour_Pursuit.vcxproj", "{8CB8EB3C-4D01-4911-1120-470027A6804E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
