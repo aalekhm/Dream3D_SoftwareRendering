@@ -343,7 +343,7 @@ inline Vector2 operator*(const float a, const Vector2 vec) {
 }
 
 inline std::ostream& operator<<(std::ostream& os, const Vector2& vec) {
-	os << "(" << vec.x << ", " << vec.y << ")";
+	//os << "(" << vec.x << ", " << vec.y << ")";
 	return os;
 }
 // END OF VECTOR2 /////////////////////////////////////////////////////////////
@@ -467,7 +467,7 @@ inline Vector3 operator*(const float a, const Vector3 vec) {
 }
 
 inline std::ostream& operator<<(std::ostream& os, const Vector3& vec) {
-	os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
+	//os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
 	return os;
 }
 // END OF VECTOR3 /////////////////////////////////////////////////////////////
@@ -590,7 +590,7 @@ inline Vector4 operator*(const float a, const Vector4 vec) {
 }
 
 inline std::ostream& operator<<(std::ostream& os, const Vector4& vec) {
-	os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ", " << vec.w << ")";
+	//os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ", " << vec.w << ")";
 	return os;
 }
 // END OF VECTOR4 /////////////////////////////////////////////////////////////

@@ -404,8 +404,8 @@ inline Vector2 operator*(const Vector2& v, const Matrix2& rhs)
 
 inline std::ostream& operator<<(std::ostream& os, const Matrix2& m)
 {
-    os << "(" << m[0] << ",\t" << m[1] << ")\n"
-       << "(" << m[2] << ",\t" << m[3] << ")\n";
+    //os << "(" << m[0] << ",\t" << m[1] << ")\n"
+    //   << "(" << m[2] << ",\t" << m[3] << ")\n";
     return os;
 }
 // END OF MATRIX2 INLINE //////////////////////////////////////////////////////
@@ -687,9 +687,9 @@ inline Vector3 operator*(const Vector3& v, const Matrix3& m)
 
 inline std::ostream& operator<<(std::ostream& os, const Matrix3& m)
 {
-    os << "(" << m[0] << ",\t" << m[1] << ",\t" << m[2] << ")\n"
-       << "(" << m[3] << ",\t" << m[4] << ",\t" << m[5] << ")\n"
-       << "(" << m[6] << ",\t" << m[7] << ",\t" << m[8] << ")\n";
+    //os << "(" << m[0] << ",\t" << m[1] << ",\t" << m[2] << ")\n"
+    //   << "(" << m[3] << ",\t" << m[4] << ",\t" << m[5] << ")\n"
+    //   << "(" << m[6] << ",\t" << m[7] << ",\t" << m[8] << ")\n";
     return os;
 }
 // END OF MATRIX3 INLINE //////////////////////////////////////////////////////
@@ -974,10 +974,10 @@ inline Vector3 operator*(const Vector3& v, const Matrix4& m)
 
 inline std::ostream& operator<<(std::ostream& os, const Matrix4& m)
 {
-    os << "(" << m[0]  << ",\t" << m[1]  << ",\t" << m[2]  <<  ",\t" << m[3] << ")\n"
-       << "(" << m[4]  << ",\t" << m[5]  << ",\t" << m[6]  <<  ",\t" << m[7] << ")\n"
-       << "(" << m[8]  << ",\t" << m[9]  << ",\t" << m[10] <<  ",\t" << m[11] << ")\n"
-       << "(" << m[12] << ",\t" << m[13] << ",\t" << m[14] <<  ",\t" << m[15] << ")\n";
+    //os << "(" << m[0]  << ",\t" << m[1]  << ",\t" << m[2]  <<  ",\t" << m[3] << ")\n"
+    //   << "(" << m[4]  << ",\t" << m[5]  << ",\t" << m[6]  <<  ",\t" << m[7] << ")\n"
+    //   << "(" << m[8]  << ",\t" << m[9]  << ",\t" << m[10] <<  ",\t" << m[11] << ")\n"
+    //   << "(" << m[12] << ",\t" << m[13] << ",\t" << m[14] <<  ",\t" << m[15] << ")\n";
     return os;
 }
 // END OF MATRIX4 INLINE //////////////////////////////////////////////////////
